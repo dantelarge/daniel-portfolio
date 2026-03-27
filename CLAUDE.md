@@ -10,8 +10,10 @@ Personal portfolio website for **Daniel Enantomhen** (`@dantelarge`).
 A single-page, static HTML/CSS/JS portfolio — **no build tools, no frameworks**.
 
 - **File:** `index.html` (all HTML + CSS + JS in one file)
-- **Profile photo:** `profile.jpg` (circular hero image with teal spinning ring)
-- **Live URL:** TBD (not yet deployed)
+- **Profile photo:** `profile.jpeg` (circular hero image with teal spinning ring)
+- **GitHub repo:** https://github.com/dantelarge/daniel-portfolio
+- **Live URL:** https://dantelarge.github.io/daniel-portfolio/
+- **Deployed via:** GitHub Pages (branch: master, path: /)
 
 ---
 
@@ -99,8 +101,8 @@ A single-page, static HTML/CSS/JS portfolio — **no build tools, no frameworks*
 
 ## Profile Photo
 
-- File: `profile.jpg` (in project root)
-- Referenced as `./profile.jpg` in the hero `<img>` tag
+- File: `profile.jpeg` (in project root)
+- Referenced as `./profile.jpeg` in the hero `<img>` tag
 - Falls back to initials "DE" if image fails to load
 - Displayed in a circular frame with a spinning teal conic-gradient ring
 
