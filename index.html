@@ -202,7 +202,7 @@
         }
         .gold { color: var(--gold); }
 
-        /* ── REVEAL ANIMATIONS ── */
+        /* ── REVEAL ANIMATIONS (scroll-triggered, below-fold only) ── */
         .reveal {
             opacity: 0; transform: translateY(22px);
             transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
@@ -213,6 +213,20 @@
         .d3 { transition-delay: 0.3s; }
         .d4 { transition-delay: 0.4s; }
         .d5 { transition-delay: 0.5s; }
+
+        /* ── HERO FADE-IN (always visible, no scroll trigger) ── */
+        .hero-animate {
+            animation: heroFade 0.7s var(--ease) both;
+        }
+        .hero-animate.d1 { animation-delay: 0.1s; }
+        .hero-animate.d2 { animation-delay: 0.2s; }
+        .hero-animate.d3 { animation-delay: 0.3s; }
+        .hero-animate.d4 { animation-delay: 0.4s; }
+        .hero-animate.d5 { animation-delay: 0.5s; }
+        @keyframes heroFade {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: none; }
+        }
 
         /* ── HERO ── */
         #hero {
@@ -590,24 +604,24 @@
     <div class="container">
         <div class="hero-grid">
             <div>
-                <div class="hero-badge reveal">
+                <div class="hero-badge hero-animate">
                     <span class="badge-dot"></span>
                     Available for freelance
                 </div>
-                <h1 class="hero-name reveal d1">
+                <h1 class="hero-name hero-animate d1">
                     Daniel<br>
                     <span class="hero-name-last">Enantomhen</span>
                 </h1>
-                <div class="hero-alias reveal d2">@dantelarge &nbsp;·&nbsp; AI Developer &amp; Data Analyst</div>
-                <p class="hero-tagline reveal d3">
+                <div class="hero-alias hero-animate d2">@dantelarge &nbsp;·&nbsp; AI Developer &amp; Data Analyst</div>
+                <p class="hero-tagline hero-animate d3">
                     I build <strong>intelligent applications</strong>, data dashboards,
                     and automation systems — turning complex problems into products people actually use.
                 </p>
-                <div class="hero-btns reveal d4">
+                <div class="hero-btns hero-animate d4">
                     <a href="#projects" class="btn-primary">View Projects →</a>
                     <a href="#contact" class="btn-secondary">Get in Touch</a>
                 </div>
-                <div class="hero-stats reveal d5">
+                <div class="hero-stats hero-animate d5">
                     <div>
                         <div class="stat-num" data-count="5" data-suffix="+">0</div>
                         <div class="stat-label">Projects</div>
@@ -622,7 +636,7 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-photo-wrap reveal d2">
+            <div class="hero-photo-wrap hero-animate d2">
                 <div class="hero-photo-frame">
                     <img
                         src="./profile.jpeg"
