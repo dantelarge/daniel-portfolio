@@ -109,7 +109,7 @@
             border: 1.5px solid var(--gold);
             transform: translate(-50%,-50%);
             opacity: 0.5;
-            transition: width 0.2s, height 0.2s, opacity 0.2s;
+            transition: left 0.12s ease-out, top 0.12s ease-out, width 0.2s, height 0.2s, opacity 0.2s;
         }
         .cursor-ring.hovered { width: 48px; height: 48px; opacity: 0.85; }
         @media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
@@ -216,10 +216,9 @@
 
         /* ── HERO ── */
         #hero {
-            min-height: calc(100svh - 60px);
             display: flex; align-items: center;
             position: relative; overflow: hidden;
-            padding: 4rem 0 3rem;
+            padding: 5rem 0 4rem;
         }
         .hero-bg-text {
             position: absolute;
@@ -946,21 +945,14 @@ function escapeHtml(str) {
 /* ── Custom Cursor ── */
 const cursorDot  = document.getElementById('cursor-dot');
 const cursorRing = document.getElementById('cursor-ring');
-let mx = 0, my = 0, rx = 0, ry = 0;
 
 document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    cursorDot.style.left = mx + 'px';
-    cursorDot.style.top  = my + 'px';
+    const x = e.clientX, y = e.clientY;
+    cursorDot.style.left  = x + 'px';
+    cursorDot.style.top   = y + 'px';
+    cursorRing.style.left = x + 'px';
+    cursorRing.style.top  = y + 'px';
 });
-
-(function animateCursor() {
-    rx += (mx - rx) * 0.14;
-    ry += (my - ry) * 0.14;
-    cursorRing.style.left = rx + 'px';
-    cursorRing.style.top  = ry + 'px';
-    requestAnimationFrame(animateCursor);
-})();
 
 document.querySelectorAll('a,button,.service-card,.project-card,.skill-tag').forEach(el => {
     el.addEventListener('mouseenter', () => cursorRing.classList.add('hovered'));
